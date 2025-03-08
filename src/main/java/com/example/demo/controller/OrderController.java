@@ -1,0 +1,50 @@
+package com.example.demo.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Dto.OrderCancelDto;
+import com.example.demo.Dto.OrderDto;
+import com.example.demo.entites.Order;
+import com.example.demo.service.OrderServcie;
+@RestController
+@RequestMapping("/v1/api/users")
+public class OrderController {
+
+	private OrderServcie orderServcie;
+	
+	public OrderController(OrderServcie orderServcie) {
+		this.orderServcie=orderServcie;
+	}
+	
+	@PostMapping("/order")
+	public ResponseEntity<String> createOrder(@RequestBody OrderDto orderDto){
+		// from feature2
+		// from feature1
+		this.orderServcie.createOrder(orderDto);
+		return new ResponseEntity<>("order placed successfully",HttpStatus.CREATED);
+	}
+	@PostMapping("/order")
+	public ResponseEntity<String> createOrde(@RequestBody OrderDto orderDto){
+		// added comment in feature2
+		// for feature1
+//		this.orderServcie.createOrder(orderDto);
+		return new ResponseEntity<>("order placed successfully",HttpStatus.CREATED);
+	}
+	@DeleteMapping("/delete")
+	public ResponseEntity<String> deleteOrder(@RequestBody OrderCancelDto orderCancelDto){
+		//added comment
+		//added commiet in feature 2
+		this.orderServcie.cancelOrder(orderCancelDto);
+
+		// added newe             lien aat 34
+		// added new line in line no 34
+
+		return new ResponseEntity<>("order deleted successfull",HttpStatus.OK);
+	}
+}
