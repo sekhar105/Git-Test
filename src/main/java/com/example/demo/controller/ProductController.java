@@ -56,7 +56,7 @@ public class ProductController {
 	
 	@PostMapping("/addProduct")
 	public ResponseEntity<String> addProduct(@RequestBody ProductDto productDto){
-		
+		// changes in feature2 
 		String addProduct = productService.addProduct(productDto);
 		return new ResponseEntity<String>(addProduct,HttpStatus.OK);
 	}
