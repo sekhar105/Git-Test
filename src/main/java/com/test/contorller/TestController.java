@@ -22,4 +22,7 @@ public class TestController {
     public  String  onefeature1(){
         return "1feature1";
     }
+    public  String onefeature2(){
+        return "onefeature2";
+    }
 }
