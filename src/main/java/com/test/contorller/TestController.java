@@ -18,4 +18,7 @@ public class TestController {
     public  String feature2(){
         return  null;
     }
+    public  String onefeature2(){
+        return "onefeature2";
+    }
 }
