@@ -10,4 +10,8 @@ public class TestController {
     public String getName(){
         return "hi sekhar ";
     }
+
+    public  String feature2(){
+        return  null;
+    }
 }
